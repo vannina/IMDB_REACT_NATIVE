@@ -1,0 +1,191 @@
+import React, { Component, Fragment } from 'react'
+import {
+  Image,
+  Button,
+  SafeAreaView,
+  StyleSheet,
+  ScrollView,
+  View,
+  Text,
+  ActivityIndicator,
+} from 'react-native'
+
+class App extends Component {
+  render = () => {
+    return (
+      //CONTAINER PAGE
+      <View style={styles.mainContainer}>
+        {/* //CONTAINER LOGO */}
+        <View style={styles.toolbar}>
+          <Image
+            style={{
+              width: 50,
+              height: 50,
+            }}
+            source={require('../IMDB/ios/Images/IMDB.png')}
+          />
+        </View>
+
+        <View class={styles.container2}>
+          <View>
+            <Text style={(styles.title, { color: 'white', fontSize: 30 })}>
+              Interstellar
+            </Text>
+          </View>
+
+          <View style={styles.sousTitle}>
+            <Text style={{ color: 'white' }}>2014 </Text>
+            <Text style={{ color: 'white' }}>PG-13 </Text>
+            <Text style={{ color: 'white' }}>2h 49min </Text>
+            <Text style={{ color: 'white' }}>Adventure, </Text>
+            <Text style={{ color: 'white' }}>Drama, </Text>
+            <Text style={{ color: 'white' }}>Sci-Fi </Text>
+          </View>
+        </View>
+
+        <View style={styles.container3}>
+          <View style={{ flex: 1 }}>
+            <Image
+              style={styles.cover}
+              style={{
+                width: 140,
+                height: 200,
+              }}
+              source={require('../IMDB/ios/Images/interstellar-movie.jpg')}
+            />
+          </View>
+          <View style={[styles.content, { flex: 1 }]}>
+            <Text style={[styles.description, { flex: 1, flexWrap: 'wrap' }]}>
+              A team of explorers travel through a wormohole in space in an
+              attempt to ensure humanity survival.
+            </Text>
+            <Button
+              style={styles.Watchlist}
+              // onPress={onPressLearnMore}
+              title="+ ADD TO WATCHLIST"
+              color="blue"
+              accessibilityLabel="+ ADD TO WATCHLIST"
+            />
+          </View>
+        </View>
+
+        <View style={styles.container4}>
+          <ScrollView>
+            <Text>tt</Text>
+            <Text>tt</Text>
+            <Text>tt</Text>
+          </ScrollView>
+        </View>
+
+        <View style={styles.container5}>
+          <ScrollView>
+            <Text>tt</Text>
+            <Text>tt</Text>
+            <Text>tt</Text>
+          </ScrollView>
+        </View>
+      </View>
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  mainContainer: {
+    backgroundColor: '#393939',
+    flex: 1,
+    padding: 5,
+  },
+
+  toolbar: {
+    height: 40,
+    marginTop: 35,
+    // paddingTop: 15,
+    paddingLeft: 10,
+    // marginTop: 35,
+    // marginLeft: 0,
+    flexDirection: 'row',
+    alignItems: 'stretch',
+    backgroundColor: '#212121',
+    flex: 0.5,
+  },
+
+  container2: {
+    marginTop: 0,
+    paddingTop: 5,
+    paddingBottom: 10,
+    paddingLeft: 10,
+    marginTop: 5,
+    marginBottom: 15,
+    marginLeft: 10,
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    flex: 1,
+    backgroundColor: '#393939',
+    // backgroundColor: 'grey',
+  },
+  title: {
+    flexDirection: 'column',
+    paddingLeft: 10,
+    marginTop: 15,
+    height: 25,
+    fontSize: 30,
+  },
+
+  sousTitle: {
+    color: 'white',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingBottom: 20,
+    paddingTop: 20,
+    // fontSize: 8,
+  },
+
+  cover: {
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    paddingLeft: 10,
+  },
+
+  content: {
+    flexDirection: 'column',
+    alignItems: 'flex-end',
+    alignItems: 'center',
+  },
+
+  description: {
+    color: 'white',
+    fontSize: 10,
+    // justifyContent: 'flex-start',
+    flexDirection: 'column',
+    alignItems: 'flex-end',
+    width: 300,
+    // paddingLeft: 100,
+  },
+
+  watchlist: {
+    flex: 1,
+    borderRadius: 5,
+    borderColor: 'blue',
+    fontSize: 10,
+  },
+
+  container3: {
+    backgroundColor: 'red',
+    flex: 2,
+    paddingTop: 20,
+    flexDirection: 'row',
+  },
+
+  container4: {
+    backgroundColor: 'yellow',
+    flex: 2,
+  },
+
+  container5: {
+    backgroundColor: 'pink',
+    flex: 1,
+  },
+})
+
+export default App
